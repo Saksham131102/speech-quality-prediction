@@ -1,3 +1,37 @@
+# Python virtual environments
 .venv/
-/Users/saksham/Desktop/majorProject2/speech_quality_prediction/venv
 venv/
+speech_quality_prediction/venv/
+**/venv/
+**/.venv/
+env/
+ENV/
+
+# Python bytecode files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Jupyter notebooks
+.ipynb_checkpoints
+
+# Logs
+logs/
+*.log
+
+# OS-specific files
+.DS_Store
+._.DS_Store
+**/.DS_Store
+**/._.DS_Store
+
+# Large model files
+*.pt
+*.pth
+*.onnx

@@ -1,0 +1,6 @@
+loss: 1.2625
+mse: 1.2625
+rmse: 1.1236
+mae: 1.1035
+pearson: -0.2416
+spearman: -0.3000

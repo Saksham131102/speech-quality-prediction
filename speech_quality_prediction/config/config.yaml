@@ -1,0 +1,46 @@
+# Data configuration
+data:
+  audio_dir: "data/raw"
+  processed_dir: "data/processed"
+  train_ratio: 0.7
+  val_ratio: 0.15
+  test_ratio: 0.15
+  sample_rate: 16000
+  max_duration: 5.0  # in seconds
+
+# Feature extraction configuration
+features:
+  frame_length_ms: 25
+  frame_shift_ms: 10
+  n_mfcc: 13
+  n_mels: 40
+  window_type: "hann"
+  include_mfcc: true
+  include_spectrogram: true
+  include_chroma: false
+  include_contrast: false
+
+# Model configuration
+model:
+  type: "cnn_lstm"  # options: "cnn", "lstm", "cnn_lstm", "transformer"
+  hidden_size: 128
+  num_layers: 2
+  dropout: 0.3
+  bidirectional: true
+  
+# Training configuration
+training:
+  batch_size: 32
+  num_epochs: 100
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  optimizer: "adam"  # options: "adam", "sgd"
+  early_stopping_patience: 10
+  lr_scheduler: "reduce_on_plateau"  # options: "step", "reduce_on_plateau", "cosine"
+  checkpoint_dir: "models/checkpoints"
+  
+# Evaluation configuration
+evaluation:
+  metrics: ["mse", "rmse", "pearson", "spearman"]
+  predict_mos: true  # Mean Opinion Score prediction
+  objective_metrics: ["pesq", "stoi"] 

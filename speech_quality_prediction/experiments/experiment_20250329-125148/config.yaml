@@ -1,0 +1,43 @@
+data:
+  audio_dir: data/raw
+  max_duration: 5.0
+  processed_dir: data/processed
+  sample_rate: 16000
+  test_ratio: 0.15
+  train_ratio: 0.7
+  val_ratio: 0.15
+evaluation:
+  metrics:
+  - mse
+  - rmse
+  - pearson
+  - spearman
+  objective_metrics:
+  - pesq
+  - stoi
+  predict_mos: true
+features:
+  frame_length_ms: 25
+  frame_shift_ms: 10
+  include_chroma: false
+  include_contrast: false
+  include_mfcc: true
+  include_spectrogram: true
+  n_mels: 40
+  n_mfcc: 13
+  window_type: hann
+model:
+  bidirectional: true
+  dropout: 0.3
+  hidden_size: 128
+  num_layers: 2
+  type: transformer
+training:
+  batch_size: 8
+  checkpoint_dir: /Users/saksham/Desktop/majorProject2/speech_quality_prediction/experiments/experiment_20250329-125148/models
+  early_stopping_patience: 10
+  learning_rate: 0.001
+  lr_scheduler: reduce_on_plateau
+  num_epochs: 1
+  optimizer: adam
+  weight_decay: 0.0001

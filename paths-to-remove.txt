@@ -1,0 +1,13 @@
+speech_quality_prediction/venv
+speech_quality_prediction/.venv
+.venv
+venv
+**/.venv
+**/venv
+**/__pycache__
+**/*.pyc
+**/*.pyo
+**/*.pyd
+**/*.so
+**/*.dylib
+**/.DS_Store 
